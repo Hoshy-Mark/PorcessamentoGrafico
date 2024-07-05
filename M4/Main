@@ -22,8 +22,8 @@ public class Main {
         try {
             init();
             // Atualize os caminhos das texturas para caminhos absolutos
-            backgroundTexture = loadTexture("C:\\Users\\I584816\\OneDrive - SAP SE\\Documents\\Treino\\Interview\\src\\M3\\Background.png");
-            sprite = new Sprite("C:\\Users\\I584816\\OneDrive - SAP SE\\Documents\\Treino\\Interview\\src\\M3\\spritesheet.png", 96, 16, 16, 16, 0, 0, 3);
+            backgroundTexture = loadTexture("Background.png");
+            sprite = new Sprite("spritesheet.png", 96, 16, 16, 16, 0, 0, 3);
 
             sprite.setFrames(4); // insira o número de frames de sua spritesheet
             sprite.setAnimSpeed(0); // ajuste a velocidade da animação
