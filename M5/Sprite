@@ -16,11 +16,11 @@ public class Sprite {
     private float lastX, lastY;
 
     private double lastTime;
-    private int cols;        // Número de colunas na spritesheet
-    private int rows;        // Número de linhas na spritesheet
-    private float frameTime; // Tempo atual dentro do quadro atual da animação
+    private int cols;        
+    private int rows;        
+    private float frameTime;
     private double animSpeed;
-    private int frames = 4; // Ajuste a quantidade de frames na sua spritesheet.
+    private int frames = 4; 
 
     public Sprite(String textureFile, float x, float y, float width, float height, float originX, float originY, float scale) {
         this.textureId = loadTexture(textureFile);
@@ -45,7 +45,6 @@ public class Sprite {
         this.animSpeed = animSpeed;
     }
     public void draw() {
-        // Se o sprite se moveu, atualizar a animação do frame.
         double currentTime = GLFW.glfwGetTime();
         double deltaTime = currentTime - lastTime;
         lastTime = currentTime;
@@ -59,9 +58,8 @@ public class Sprite {
         if(lastX == x || lastY == y){
             currentFrame = 1;
         }
-        currentFrame = (int) frameTime; // O frame atual é determinado pelo tempo atual.
+        currentFrame = (int) frameTime;
 
-        // Coordenadas de textura (horizontal) com base no frame atual.
         float frameOffset = 1.f / frames * currentFrame;
 
         GL11.glPushMatrix();
@@ -72,7 +70,6 @@ public class Sprite {
 
         GL11.glBindTexture(GL11.GL_TEXTURE_2D, textureId);
         GL11.glBegin(GL11.GL_QUADS);
-        // Ajusta as coordenadas da textura com base no frameOffset.
         GL11.glTexCoord2f(frameOffset, 0);
         GL11.glVertex2f(0, 0);
         GL11.glTexCoord2f(frameOffset + 1.f / frames, 0);
