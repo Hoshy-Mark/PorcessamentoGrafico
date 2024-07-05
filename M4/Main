@@ -46,12 +46,10 @@ public class Main {
     }
 
     public void init() {
-        // Initialize GLFW
         if (!GLFW.glfwInit()) {
             throw new IllegalStateException("Unable to initialize GLFW");
         }
 
-        // Configure GLFW
         GLFW.glfwDefaultWindowHints();
         GLFW.glfwWindowHint(GLFW.GLFW_VISIBLE, GLFW.GLFW_FALSE);
         GLFW.glfwWindowHint(GLFW.GLFW_RESIZABLE, GLFW.GLFW_TRUE);
@@ -65,9 +63,7 @@ public class Main {
         GLFW.glfwShowWindow(window);
         GL.createCapabilities();
 
-        // Habilite texturas 2D
         GL11.glEnable(GL11.GL_TEXTURE_2D);
-        // Habilite mistura para suportar transparência
         GL11.glEnable(GL11.GL_BLEND);
         GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
 
