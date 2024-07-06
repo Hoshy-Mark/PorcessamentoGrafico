@@ -53,7 +53,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		batch = new SpriteBatch();
 
 		try {
-			FileReader fileReader = new FileReader("C:\\Users\\I584816\\OneDrive - SAP SE\\Documents\\Treino\\Interview\\src\\GRAUB\\map.txt");
+			FileReader fileReader = new FileReader("map.txt");
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
 			ArrayList<String[]> lines = new ArrayList<String[]>();
 			String line = null;
@@ -83,9 +83,9 @@ public class MyGdxGame extends ApplicationAdapter {
 			e.printStackTrace();
 		}
 		for(int i = 0; i < tileSets.length; i++){
-			tileSets[i] = new Texture("C:\\Users\\I584816\\OneDrive - SAP SE\\Documents\\Treino\\GrauB\\assets\\Tile" + (i+1) + ".png"); // Carregando as imagens do tileSet
+			tileSets[i] = new Texture("Tile" + (i+1) + ".png"); // Carregando as imagens do tileSet
 		}
-		walkSheet = new Texture(Gdx.files.internal("C:\\Users\\I584816\\OneDrive - SAP SE\\Documents\\Treino\\GrauB\\assets\\spritesheet.png")); // Carrega a sprite sheet como uma textura
+		walkSheet = new Texture(Gdx.files.internal("spritesheet.png")); // Carrega a sprite sheet como uma textura
 		TextureRegion[][] tmp = TextureRegion.split(walkSheet, walkSheet.getWidth() / FRAME_COLS, walkSheet.getHeight() / FRAME_ROWS); // Divida a textura em pedaços
 		TextureRegion[] walkFrames = new TextureRegion[FRAME_COLS * FRAME_ROWS];
 
